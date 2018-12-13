@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>待办事项</title>
+    <!--css-->
+    <link href="/dater/plugs/layui/css/layui.css" rel="stylesheet"/>
+    <link href="/dater/plugs/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/dater/plugs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/AdminLTE.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/skins/_all-skins.css" rel="stylesheet"/>
+    <link href="/dater/plugs/ionicons.min.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/default.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/toDoList.css" rel="stylesheet"/>
+    <!--js-->
+    <script src="/dater/plugs/jquery-plug/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/dater/plugs/layui/layui.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/common.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/toDoList.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="layui-admin searchArea">
+    <!--查询区域-->
+    <blockquote class="layui-form searchArea">
+        <button href="javascript:void(0)" class="layui-btn layui-btn-normal" onclick="addSchedule()">
+            新增待办事项
+        </button>
+        <div class="layui-input-inline">
+            <label class="layui-form-label">所属用户</label>
+            <select id="userId">
+                <option value="">==请选择==</option>
+                <label th:each="user:${userList}">
+                    <option th:text="${user.name}" th:value="${user.id}"></option>
+                </label>
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label">任务名称</label>
+            <input type="text" class="layui-input" id="content"/>
+        </div>
+        <button class="layui-btn layui-btn-normal" data-type="toDoReload">查询</button>
+    </blockquote>
+    <table id="toDoList" class="layui-table"></table>
+</div>
+
+<script id="userTpl" type="text/html">
+    {{ userName(d.userid) }}
+</script>
+
+<script id="toDoTpl" type="text/html">
+    <a class="list_operate_a" data-id="{{d.id}}" onclick="openEditSchedule(this,'1');">编辑</a>
+    <a class="list_operate_a" data-id="{{d.id}}" onclick="deleteSchedule(this)">删除</a>
+</script>
+</body>
+</html>

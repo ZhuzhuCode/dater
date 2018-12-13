@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>用户新增/编辑</title>
+    <!--css-->
+    <link href="/dater/plugs/layui/css/layui.css" rel="stylesheet"/>
+    <link href="/dater/plugs/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/dater/plugs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/AdminLTE.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/skins/_all-skins.css" rel="stylesheet"/>
+    <link href="/dater/plugs/ionicons.min.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/default.css" rel="stylesheet"/>
+    <!--js-->
+    <script src="/dater/plugs/jquery-plug/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/dater/plugs/layui/layui.js" type="text/javascript"></script>
+    <script src="/dater/plugs/jquery-plug/jquery.form.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/common.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/userEdit.js" type="text/javascript"></script>
+</head>
+<body>
+    <form class="layui-form dialog_form" id="userEditForm" method="post">
+        <input type="hidden" name="id" th:value="${user.id}"/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">账户</label>
+            <div class="layui-input-block">
+                <input type="text" id="account" name="name" lay-verify="required|account" placeholder="请输入用户名"
+                       autocomplete="off" th:value="${user.name}" class="layui-input formInput"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" id="password" name="password" lay-verify="required|pass" placeholder="输入6-16位字母加数字组合"
+                       autocomplete="off" th:value="${user.password}" class="layui-input formInput"/>
+            </div>
+        </div>
+        <div align="center" style="margin-top: 10px;">
+            <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="submitAdd">保存</button>
+            <button class="layui-btn layui-btn-primary" onclick="closeLayer()">取消</button>
+        </div>
+    </form>
+</body>
+</html>

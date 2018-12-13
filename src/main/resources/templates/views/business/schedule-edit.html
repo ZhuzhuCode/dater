@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>待办事项新增/编辑</title>
+    <!--css-->
+    <link href="/dater/plugs/layui/css/layui.css" rel="stylesheet"/>
+    <link href="/dater/plugs/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/dater/plugs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/AdminLTE.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/skins/_all-skins.css" rel="stylesheet"/>
+    <link href="/dater/plugs/ionicons.min.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/default.css" rel="stylesheet"/>
+    <!--js-->
+    <script src="/dater/plugs/jquery-plug/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/dater/plugs/layui/layui.js" type="text/javascript"></script>
+    <script src="/dater/plugs/jquery-plug/jquery.form.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/common.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/schedule-edit.js" type="text/javascript"></script>
+</head>
+<body>
+    <form class="layui-form dialog_form" id="scheduleEditForm" method="post">
+        <input type="hidden" name="id" th:value="${schedule.id}"/>
+        <input type="hidden" name="userid" th:value="${schedule.userid}"/>
+        <input type="hidden" name="createtimeCN" th:value="${schedule.createtimeCN}"/>
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="content" lay-verify="required|task" placeholder="请输入任务名称"
+                       autocomplete="off" th:value="${schedule.content}" class="layui-input formInput"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务执行时间</label>
+            <div class="layui-input-inline">
+                <input type="text" id="contentstart" name="contentstartCN" lay-verify="required" placeholder="请选择任务开始时间"
+                       autocomplete="off" th:value="${schedule.contentstartCN}" class="layui-input formInput"/>
+            </div>
+        </div>
+        <div align="center" style="margin-top: 10px;">
+            <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="submitSchedule">保存</button>
+            <button class="layui-btn layui-btn-primary" onclick="closeLayer()">取消</button>
+        </div>
+    </form>
+</body>
+</html>

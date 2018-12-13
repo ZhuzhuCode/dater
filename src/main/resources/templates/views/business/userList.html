@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>用户列表</title>
+    <!--css-->
+    <link href="/dater/plugs/layui/css/layui.css" rel="stylesheet"/>
+    <link href="/dater/plugs/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/dater/plugs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/AdminLTE.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/skins/_all-skins.css" rel="stylesheet"/>
+    <link href="/dater/plugs/ionicons.min.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/default.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/userList.css" rel="stylesheet"/>
+    <!--js-->
+    <script src="/dater/plugs/jquery-plug/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/dater/plugs/layui/layui.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/common.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/userList.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="layui-admin">
+    <!--查询区域-->
+    <blockquote class="layui-form searchArea">
+        <button href="javascript:void(0)" class="layui-btn layui-btn-normal" onclick="addUser()">
+            新增用户
+        </button>
+        <div class="layui-input-inline">
+            <label class="layui-form-label">姓名</label>
+            <input type="text" class="layui-input" id="userName"/>
+        </div>
+        <button class="layui-btn layui-btn-normal" data-type="userReload">查询</button>
+    </blockquote>
+    <table id="userList" class="layui-table"></table>
+</div>
+
+<script id="userTpl" type="text/html">
+    <!--<a class="list_operate_a" data-id="{{d.id}}" onclick="openEditUser(this,'0');">新增</a>-->
+    <a class="list_operate_a" data-id="{{d.id}}" onclick="openEditUser(this,'1');">编辑</a>
+    <a class="list_operate_a" data-id="{{d.id}}" onclick="deleteUser(this)">删除</a>
+</script>
+</body>
+</html>

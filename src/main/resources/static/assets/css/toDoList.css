@@ -1,0 +1,19 @@
+/**
+ * Created by zhujr on 2018/10/12.
+ */
+@charset "UTF-8";
+.searchArea{
+    padding: 10px;
+}
+.searchArea .layui-select-title{
+    width: 280px;
+}
+
+.searchArea .layui-form-label{
+    text-align: right;
+    width: 100px;
+}
+
+.searchArea .layui-input{
+    width: 180px !important;
+}

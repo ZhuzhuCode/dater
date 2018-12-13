@@ -1,0 +1,17 @@
+/**
+ * Created by zhujr on 2018/10/8.
+ * 用户列表css
+ */
+@charset "UTF-8";
+
+.searchArea{
+  padding: 10px;
+}
+
+.searchArea .layui-form-label{
+    text-align: right;
+}
+
+.searchArea .layui-input{
+    width: 180px !important;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">模板页</title>
+    <!--css-->
+    <link href="/dater/plugs/layui/css/layui.css" rel="stylesheet"/>
+    <link href="/dater/plugs/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/dater/plugs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/AdminLTE.css" rel="stylesheet"/>
+    <link href="/dater/plugs/AdminLTE/css/skins/_all-skins.css" rel="stylesheet"/>
+    <link href="/dater/plugs/ionicons.min.css" rel="stylesheet"/>
+    <link href="/dater/assets/css/default.css" rel="stylesheet"/>
+    <!--js-->
+    <script src="/dater/plugs/jquery-plug/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/dater/plugs/layui/layui.js" type="text/javascript"></script>
+    <script src="/dater/plugs/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/dater/plugs/AdminLTE/js/app.js" type="text/javascript"></script>
+    <script src="/dater/assets/js/default.js" type="text/javascript"></script>
+    <!--[if IE 8]>
+    <script src="/dater/plugs/html5shiv.min.js" type="text/javascript"></script>
+    <script src="/dater/plugs/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!--头部-->
+        <header class="main-header">
+            <div th:replace="fragments/header"></div>
+        </header>
+
+        <!--侧边栏-->
+        <aside class="main-sidebar">
+            <div th:replace="fragments/mainsiderbar"></div>
+        </aside>
+
+        <!--内容展示区-->
+        <section id="contentS" class="content-wrapper" style="background-color: white;">
+            <div layout:fragment="content"></div>
+        </section>
+
+        <!--底部-->
+        <footer class="main-footer">
+            <div th:replace="fragments/footer"></div>
+        </footer>
+    </div>
+</body>
+</html>

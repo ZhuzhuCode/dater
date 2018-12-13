@@ -1,0 +1,42 @@
+/**
+ * Created by zhujr on 2018/9/18.
+ * 模板页css
+ */
+@charset "UTF-8";
+
+.list_operate_a{
+    color: #30AAF5;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.list_operate_a:hover, .list_operate_a:focus {
+    color: #28ccf5;
+}
+
+/**********IFrame*************/
+.iframe_dater{
+    margin:0px 15px 0px 10px;
+}
+
+.searchArea{
+    padding-top: 10px;
+}
+
+/***********弹窗form*************/
+.dialog_form{
+    margin: 10px;
+}
+.dialog_form .layui-form-label{
+    text-align: right;
+    width: 120px;
+}
+.dialog_form .layui-input-block{
+    margin-left: 0px;
+}
+.dialog_form .layui-input{
+    border-radius: 6px;
+    width: 220px;
+}
+.dialog_form .layui-btn{
+    border-radius: 6px;
+}
